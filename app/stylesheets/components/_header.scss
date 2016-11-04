@@ -1,0 +1,18 @@
+// Header styles
+
+header {
+	background: $dark-blue-1;
+	background: linear-gradient(to bottom right, $dark-blue-1, $dark-blue-2);
+	background: -moz-linear-gradient(to bottom right, $dark-blue-1, $dark-blue-2);
+	background: -o-linear-gradient(to bottom right, $dark-blue-1, $dark-blue-2);
+	background: -webkit-linear-gradient(left top, $dark-blue-1, $dark-blue-2);
+	width: 100%;
+	color: $aqua-blue;
+
+	h1 {
+		margin: 0;
+		background: linear-gradient(330deg, $aqua-blue, $blue);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
