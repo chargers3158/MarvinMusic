@@ -1,4 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+
+
+const mapStateToProps = (state, ownProps) => {
+	return {
+		state: state,
+	};
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+	return {
+	};
+};
 
 class GlobalHeader extends Component {
 	render() {
@@ -10,4 +23,4 @@ class GlobalHeader extends Component {
 	}
 }
 
-export default GlobalHeader;
+export default connect(mapStateToProps, mapDispatchToProps)(GlobalHeader);
