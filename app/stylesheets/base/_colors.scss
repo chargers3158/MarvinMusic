@@ -1,0 +1,36 @@
+// Variables
+
+/* Color Pallette */
+$white: #ffffff;
+$black: #000000;
+
+$dark-gray: #222228;
+$mid-gray: #abbaba;
+$light-gray: #ecf0f1;
+$dark-gray-90: rgba(34, 34, 40, 0.9);
+
+$blue-1: #d1f0ff;
+$blue-2: #75d3fe;
+$blue-3: #47c4fe;
+$blue-4: #19b5fe;
+
+$orange-1: #f9e5d4;
+$orange-2: #ecb07e;
+$orange-3: #e69553;
+$orange-4: #e07b28;
+
+
+/* Gradients */
+@mixin white-to-blue-gradient() {
+	background: -webkit-linear-gradient(right, $white, $blue-4); 
+	background: -o-linear-gradient(right, $white, $blue-4); 
+	background: linear-gradient(to right, $white, $blue-4); 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($white)}', endColorstr='#{ie-hex-str($blue-4)}', GradientType=1); 
+}
+
+@mixin white-to-orange-gradient() {
+	background: -webkit-linear-gradient(right, $white, $orange-4); 
+	background: -o-linear-gradient(right, $white, $orange-4); 
+	background: linear-gradient(to right, $white, $orange-4); 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($white)}', endColorstr='#{ie-hex-str($orange-4)}', GradientType=1); 
+}

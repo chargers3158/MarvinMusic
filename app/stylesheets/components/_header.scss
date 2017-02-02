@@ -1,18 +1,28 @@
 // Header styles
 
 header {
-	background: $dark-blue-1;
-	background: linear-gradient(to bottom right, $dark-blue-1, $dark-blue-2);
-	background: -moz-linear-gradient(to bottom right, $dark-blue-1, $dark-blue-2);
-	background: -o-linear-gradient(to bottom right, $dark-blue-1, $dark-blue-2);
-	background: -webkit-linear-gradient(left top, $dark-blue-1, $dark-blue-2);
-	width: 100%;
-	color: $aqua-blue;
+	background: $dark-gray;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 50px;
+	padding: 0 40px;
 
-	h1 {
+	.marvin-title{
+		@include white-to-blue-gradient();
+		font-weight: 300;
 		margin: 0;
-		background: linear-gradient(330deg, $aqua-blue, $blue);
+		text-transform: uppercase;
+		letter-spacing: 3px;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+
+	.header-toolbar {
+
 	}
 }

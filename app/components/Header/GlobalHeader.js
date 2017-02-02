@@ -14,10 +14,25 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 class GlobalHeader extends Component {
+	constructor() {
+		super();
+		this.state = {
+			username: 'Topher Young'
+		}
+	}
 	render() {
 		return (
 			<header>
-				<h1>Marvin Music Application</h1>
+				<h1 className="marvin-title">Marvin</h1>
+				<div className="header-toolbar">
+					<div className="username-container">
+						<p className="hello">Hello,</p>
+						<p className="username">{this.state.username}</p>			
+					</div>
+					<div className="username-img">
+						Circle
+					</div>
+				</div>
 			</header>
 		);
 	}
