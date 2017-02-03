@@ -1,0 +1,206 @@
+.action-panel {
+	position: relative;
+	height: 100%;
+	width: 270px;
+	min-width: 260px;
+	background: $dark-gray;
+	margin-right: 40px;
+	.now-playing {
+		text-align: center;
+		padding: 0 20px;
+		h5 {
+			color: $mid-gray;
+			text-transform: uppercase;
+			margin: 10px 0;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.song-data {
+		text-align: center;
+		margin: 10px 20px;
+		border-bottom: 1px solid $light-gray-30;
+		.song {
+			@extend .font-bold;
+			color: $light-gray;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+		.artist {
+			@extend .font-bold;
+			color: $mid-gray;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+		.album {
+			@extend .font-thin;
+			color: $mid-gray;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+	}
+	.added-by {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin: 10px 20px;
+		border-bottom: 1px solid $light-gray-30;
+		padding-bottom: 10px;
+		.info {
+			text-align: right;
+			p {
+				@extend .font-10;
+				color: $mid-gray;
+				text-transform: uppercase;
+				margin: 0;
+			}
+			h5 {
+				@extend .font-regular;
+				color: $light-gray;
+				text-transform: uppercase;
+			}
+		}
+		img {
+			height: 30px;
+			width: 30px;
+			border-radius: 15px;
+			margin-left: 10px;
+		}
+	}
+	.song-actions {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		.song-status {
+			padding: 0 20px;
+			margin: 10px 20px;
+			border-bottom: 1px solid $light-gray-30;
+			padding-bottom: 10px;
+			text-align: center;
+			h5 {
+				color: $mid-gray;
+				margin: 10px 0;
+				text-transform: uppercase;
+			}
+		}
+		.status-buttons {
+			padding: 0 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-bottom: 10px;
+			.sucks,
+			.rocks {
+				@extend .font-bold;
+				@extend .font-14;
+				width: 100px;
+				height: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: transparent;
+				border: 2px solid;
+				text-transform: uppercase;
+				&:focus {
+					outline: none;
+				}
+			}
+			.rocks {
+				color: $blue-4;
+				border-color: $blue-4;
+				&:hover {
+					cursor: pointer;
+					background: $blue-hover;
+				}
+				&:active {
+					background: $blue-4;
+					color: $white;
+				}
+			}
+			.sucks {
+				color: $orange-4;
+				border-color: $orange-4;
+				&:hover {
+					cursor: pointer;
+					background: $orange-hover;
+				}
+				&:active {
+					background: $orange-4;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+// SVG rate bar styles
+
+// All Orange
+.score0 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score0 circle, #score0 path  { fill: $orange-4; }
+	#score1 circle, #score1 path  { fill: $orange-3; }
+	#score2 circle, #score2 path  { fill: $orange-2; }
+	#score3 circle, #score3 path  { fill: $orange-1; }
+}
+.score1 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score1 circle, #score1 path  { fill: $orange-3; }
+	#score2 circle, #score2 path  { fill: $orange-2; }
+	#score3 circle, #score3 path  { fill: $orange-1; }
+}
+.score2 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score2 circle, #score2 path  { fill: $orange-2; }
+	#score3 circle, #score3 path  { fill: $orange-1; }
+}
+.score3 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score3 circle, #score3 path  { fill: $orange-1; }
+}
+.score4 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+}
+.score5 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score5 circle, #score5 path  { fill: $blue-1; }
+}
+.score6 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score5 circle, #score5 path  { fill: $blue-1; }
+	#score6 circle, #score6 path  { fill: $blue-2; }
+}
+.score7 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score5 circle, #score5 path  { fill: $blue-1; }
+	#score6 circle, #score6 path  { fill: $blue-2; }
+	#score7 circle, #score7 path  { fill: $blue-3; }
+}
+.score8 {
+	path { fill: $light-gray; }
+	circle { fill: transparent; }
+	#score4 circle { fill: $light-gray; }
+	#score5 circle, #score5 path  { fill: $blue-1; }
+	#score6 circle, #score6 path  { fill: $blue-2; }
+	#score7 circle, #score7 path  { fill: $blue-3; }
+	#score8 circle, #score8 path  { fill: $blue-4; }
+}
+

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import GlobalHeader from './components/Header/GlobalHeader';
+import GlobalHeader from 'components/Header/GlobalHeader';
+import ActionPanel from 'components/ActionPanel/ActionPanel';
+import Library from 'components/Library/Library';
+import Queue from 'components/Queue/Queue';
 
 // Redux imports
 import { connect, Provider } from 'react-redux';
-import store from './store';
-import { fetchUser } from './actions/actions';
+import store from 'store';
+import { fetchUser } from 'actions/actions';
 
 require("./stylesheets/main.scss");
 
@@ -27,6 +30,11 @@ class Index extends Component {
 		return (
 			<main>
 				<GlobalHeader />
+				<section className="app-content">
+					<ActionPanel />
+					<Library />
+					<Queue />
+				</section>
 			</main>
 		);
 	}
