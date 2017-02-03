@@ -1,3 +1,5 @@
+var path = require('path');
+
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,6 +14,10 @@ module.exports = {
 	context: __dirname + '/',
 	devtool: debug ? 'inline-sourcemap' : null,
 	entry: './app/app.js',
+	resolve: {
+		root: path.resolve('./app'),
+		extensions: ['', '.js']
+	},
 	module: {
 		loaders: [
 			{

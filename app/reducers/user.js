@@ -1,5 +1,10 @@
 export default function userReducer(state= {
-	user: {},
+	user: {
+		name: "Topher Young",
+		balance: 10,
+		rockets: 7,
+		bombs: 5
+	},
 	fetched: false,
 	error: null
 }, action) {
@@ -9,7 +14,7 @@ export default function userReducer(state= {
 			return {
 				...state,
 				fetched: true,
-				tools: action.payload
+				user: action.payload
 			}
 		}
 		case "FETCH_USER_REJECTED" : {

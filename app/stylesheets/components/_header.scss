@@ -23,6 +23,69 @@ header {
 	}
 
 	.header-toolbar {
-
+		display: flex;
+		align-items: center;
+		flex-direction: rows;
+		.user-info {
+			display: flex;
+			align-items: center;
+			height: 30px;
+			border-right: 1px solid $light-gray-30;
+			.username-container {
+				text-align: right;
+				text-transform: uppercase;
+				margin-right: 10px;
+				.hello {
+					@extend .font-10;
+					@extend .font-regular;
+					color: $mid-gray;
+					margin: 0;
+				}
+				.username {
+					@extend .font-regular;
+					color: $light-gray;
+					margin: 0;
+				}
+			}
+			.username-image {
+				display: flex;
+				align-items: center;
+				margin-right: 20px;
+				img {
+					height: 32px;
+					width: 32px;
+					border-radius: 25px;
+				}
+			}
+		}
+		.user-status {
+			display: flex;
+			align-items: center;
+			margin-left: 10px;
+			img {
+				margin-left: 10px;
+			}
+			.balance,
+			.rockets,
+			.bombs {
+				position: relative;
+				display: flex;
+			}
+			.object-count {
+				@extend .font-bold;
+				@extend .font-10;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 15px;
+				width: 15px;
+				border-radius: 10px;
+				background: $dark-gray;
+				color: $light-gray;
+				position: absolute;
+				bottom: -3px;
+				right: -3px;
+			}
+		}
 	}
 }
