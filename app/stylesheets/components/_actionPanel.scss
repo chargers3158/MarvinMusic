@@ -9,7 +9,6 @@
 		text-align: center;
 		padding: 0 20px;
 		h5 {
-			color: $mid-gray;
 			text-transform: uppercase;
 			margin: 10px 0;
 		}
@@ -69,10 +68,10 @@
 		}
 	}
 	.song-actions {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		left: 0;
+		// position: absolute;
+		// bottom: 0;
+		// right: 0;
+		// left: 0;
 		.song-status {
 			padding: 0 20px;
 			margin: 10px 20px;
@@ -90,7 +89,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding-bottom: 10px;
+			padding-bottom: 20px;
 			.sucks,
 			.rocks {
 				@extend .font-bold;
@@ -112,10 +111,10 @@
 				border-color: $blue-4;
 				&:hover {
 					cursor: pointer;
-					background: $blue-hover;
+					background: $blue-4-20;
 				}
 				&:active {
-					background: $blue-4;
+					background: $blue-4-60;
 					color: $white;
 				}
 			}
@@ -124,20 +123,42 @@
 				border-color: $orange-4;
 				&:hover {
 					cursor: pointer;
-					background: $orange-hover;
+					background: $orange-4-20;
 				}
 				&:active {
-					background: $orange-4;
+					background: $orange-4-60;
 					color: $white;
+				}
+			}
+			.rocks-active {
+				background: $blue-4-60;
+				color: $white;
+				&:hover {
+					background: $blue-4-60;
+				}
+			}
+			.sucks-active {
+				background: $orange-4-60;
+				color: $white;
+				&:hover {
+					background: $orange-4-60;
 				}
 			}
 		}
 	}
 }
 
-// SVG rate bar styles
+/* Panel BG styles based on score */
+.rating0 { box-shadow: 0 0 20px $orange-4-80; }
+.rating1 { box-shadow: 0 0 20px $orange-4-60; }
+.rating2 { box-shadow: 0 0 20px $orange-4-40; }
+.rating3 { box-shadow: 0 0 20px $orange-4-20; }
+.rating5 { box-shadow: 0 0 20px $blue-4-20; }
+.rating6 { box-shadow: 0 0 20px $blue-4-40; }
+.rating7 { box-shadow: 0 0 20px $blue-4-60; }
+.rating8 { box-shadow: 0 0 20px $blue-4-80; }
 
-// All Orange
+/* SVG rate bar styles */
 .score0 {
 	path { fill: $light-gray; }
 	circle { fill: transparent; }

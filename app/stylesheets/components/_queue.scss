@@ -2,6 +2,57 @@
 	height: 100%;
 	width: 315px;
 	min-width: 315px;
-	background: $dark-gray;
+	background: $dark-gray-60;
 	margin-left: 40px;
+	overflow: auto;
+	.up-next {
+		text-align: center;
+	}
+	.queue-label {
+		color: $mid-gray;
+		text-transform: uppercase;
+		margin: 10px 0 0 0;
+	}
+	.queue-list {
+		text-align: center;
+	}
+}
+
+.song-block {
+	height: 100px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background: $dark-gray;
+	margin-top: 10px;
+	.album-art {
+		width: 80px;
+		height: 80px;
+		min-width: 80px;
+		min-height: 80px;
+		margin-left: 10px;
+	}
+	.song-info {
+		margin-left: 10px;
+		text-align: left;
+		width: 100%;
+		h4 {
+			@extend .font-regular;
+			color: $light-gray;
+			text-transform: capitalize;
+		}
+		h5 {
+			@extend .font-regular;
+			color: $mid-gray;
+			text-transform: capitalize;
+
+		}
+	}
+	.queue-controls {
+		width: 70px;
+		min-width: 70px;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 10px;
+	}
 }

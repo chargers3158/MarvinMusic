@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import albumArt from 'images/albumArt.png'
 import userIcon from 'images/user.png';
+
+const mapStateToProps = (state, ownProps) => {
+	return {
+		vote: state.user.user.statusVote,
+		song: state.song.song
+	};
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+	return {
+		castVote: (vote) => { dispatch({type: "STATUS_VOTE", vote}); },
+		decRating: (value) => { dispatch({type: "DECREASE_RATING", value}); },
+		inRating: (value) => { dispatch({type: "INCREASE_RATING", value}); },
+	};
+};
 
 class RateBar extends Component {
 	render () {
@@ -51,63 +66,66 @@ class RateBar extends Component {
 }
 
 class ActionPanel extends Component {
-	constructor() {
-		super();
-		this.state = {
-			currentSong: "citizen erased",
-			currentArtist: "muse",
-			currentAlbum: "origin of symmetry",
-			addedBy: "Topher Young",
-			songRating: 4
-		}
-	}
-	decRating() {
-		if(this.state.songRating > 0 ) {
-			this.setState({
-				songRating: this.state.songRating - 1
-			})
-		}
-	}
-	inRating() {
-		if(this.state.songRating < 8 ) {
-			this.setState({
-				songRating: this.state.songRating + 1
-			})
-		}
-	}
 
 	render() {
 		return (
-			<aside className="action-panel">
+			<aside className={"action-panel rating" + this.props.song.songRating}>
 				<div className="now-playing">
-					<h5>Now Playing</h5>
-					<img src={albumArt} alt={this.state.currentArtist} />
+					{this.props.song.songRating == 8 ?
+						<h5 className="blue-font">Kickass Song Playing!</h5>
+					:
+						<div>
+							{this.props.song.songRating == 0 ? 
+								<h5 className="orange-font">Boooooo!</h5>
+							:
+								<h5 className="mid-gray-font">Now Playing</h5>
+							}
+						</div>
+					}
+					<img src={this.props.song.albumArt} alt={this.props.song.artist} />
 				</div>
 				<div className="song-data">
-					<h4 className="song">{this.state.currentSong}</h4>
-					<h5 className="artist">{this.state.currentArtist}</h5>
-					<h5 className="album">{this.state.currentAlbum}</h5>
+					<h4 className="song">{this.props.song.name}</h4>
+					<h5 className="artist">{this.props.song.artist}</h5>
+					<h5 className="album">{this.props.song.album}</h5>
 				</div>
 				<div className="added-by">
 					<div className="info">
 						<p>Added By:</p>
-						<h5>{this.state.addedBy}</h5>
+						<h5>{this.props.song.addedBy}</h5>
 					</div>
-					<img src={userIcon} alt={this.state.addedBy} />
+					<img src={userIcon} alt={this.props.song.addedBy} />
 				</div>
 				<div className="song-actions">
 					<div className="song-status">
 						<h5>Song Status</h5>
-						<RateBar songRating={this.state.songRating} />
+						<RateBar songRating={this.props.song.songRating} />
 					</div>
-					<div className="status-buttons">
-						<button onClick={() => this.decRating()} className="sucks">Sucks</button>
-						<button onClick={() => this.inRating()} className="rocks">Rocks</button>
-					</div>
+					{this.props.vote ? 
+						<div>
+							{this.props.vote == 'rocks' && 
+								<div className="status-buttons">
+									<button onClick={() => {this.props.decRating(2); this.props.castVote('sucks');}} className="sucks">Sucks</button>
+									<button onClick={() => {this.props.decRating(1); this.props.castVote(null);}} className="rocks rocks-active">Rocks</button>
+								</div>
+							}
+							{this.props.vote == 'sucks' && 
+								<div className="status-buttons">
+									<button onClick={() => {this.props.inRating(1); this.props.castVote(null);}} className="sucks sucks-active">Sucks</button>
+									<button onClick={() => {this.props.inRating(2); this.props.castVote('rocks');}} className="rocks">Rocks</button>
+								</div>
+							}
+						</div>
+					:
+						<div className="status-buttons">
+							<button onClick={() => {this.props.decRating(1); this.props.castVote('sucks');}} className="sucks">Sucks</button>
+							<button onClick={() => {this.props.inRating(1); this.props.castVote('rocks');}} className="rocks">Rocks</button>
+						</div>
+					}
 				</div>
 			</aside>
 		);
 	}
 }
 
-export default ActionPanel;
+export default connect(mapStateToProps, mapDispatchToProps)(ActionPanel);

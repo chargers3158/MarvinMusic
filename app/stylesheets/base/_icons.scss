@@ -2,3 +2,103 @@
 	height: 30px;
 	width: 30px;
 }
+
+.rocket-default {
+	height: 30px;
+	width: 30px;
+	.circle,
+	.arrow {
+		stroke-miterlimit: 10;
+    stroke-width: 2px;
+	}
+	.circle {
+		fill: transparent;
+    stroke: $blue-4;
+	}
+	.arrow {
+		fill: none;
+    stroke: $blue-4;
+	}
+	&:hover {
+		cursor: pointer;
+		.circle {
+			fill: $blue-4-20;
+		}
+	}
+	&:active {
+		.circle {
+			fill: $blue-4-60;
+		}
+		.arrow {
+			stroke: $white;
+		}
+	}
+}
+
+.rocket-active {
+	height: 30px;
+	width: 30px;
+	.circle,
+	.arrow {
+		stroke-miterlimit: 10;
+    stroke-width: 2px;
+	}
+	.circle {
+		fill: $blue-4-60;
+    stroke: $blue-4;
+	}
+	.arrow {
+		fill: none;
+    stroke: $white;
+	}
+}
+
+.bomb-default {
+	height: 30px;
+	width: 30px;
+	.circle,
+	.path {
+		stroke-miterlimit: 10;
+    stroke-width: 2px;
+	}
+	.circle {
+		fill: transparent;
+    stroke: $orange-4;
+	}
+	.path {
+		fill: none;
+    stroke: $orange-4;
+	}
+	&:hover {
+		cursor: pointer;
+		.circle {
+			fill: $orange-4-20;
+		}
+	}
+	&:active {
+		.circle {
+			fill: $orange-4-60;
+		}
+		.path {
+			stroke: $white;
+		}
+	}
+}
+
+.bomb-active {
+	height: 30px;
+	width: 30px;
+	.circle,
+	.path {
+		stroke-miterlimit: 10;
+    stroke-width: 2px;
+	}
+	.circle {
+		fill: $orange-4-60;
+    stroke: $orange-4;
+	}
+	.path {
+		fill: none;
+    stroke: $white;
+	}
+}

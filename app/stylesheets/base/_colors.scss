@@ -7,21 +7,31 @@ $black: #000000;
 $dark-gray: #222228;
 $mid-gray: #abbaba;
 $light-gray: #ecf0f1;
-$dark-gray-90: rgba(34, 34, 40, 0.9);
-$light-gray-30: rgba(236, 240, 241, 0.3);
 
 $blue-1: #d1f0ff;
 $blue-2: #75d3fe;
 $blue-3: #47c4fe;
 $blue-4: #19b5fe;
-$blue-hover: rgba(25, 181, 254, 0.4);
 
 $orange-1: #f9e5d4;
 $orange-2: #ecb07e;
 $orange-3: #e69553;
 $orange-4: #e07b28;
-$orange-hover: rgba(224, 123, 40, 0.4);
 
+
+/* Transparent Colors */
+$dark-gray-90: rgba(34, 34, 40, 0.9);
+$dark-gray-60: rgba(34, 34, 40, 0.6);
+$light-gray-30: rgba(236, 240, 241, 0.3);
+
+$blue-4-20: rgba(25, 181, 254, 0.2);
+$orange-4-20: rgba(224, 123, 40, 0.2);
+$blue-4-40: rgba(25, 181, 254, 0.4);
+$orange-4-40: rgba(224, 123, 40, 0.4);
+$blue-4-60: rgba(25, 181, 254, 0.6);
+$orange-4-60: rgba(224, 123, 40, 0.6);
+$blue-4-80: rgba(25, 181, 254, 0.8);
+$orange-4-80: rgba(224, 123, 40, 0.8);
 
 /* Gradients */
 @mixin white-to-blue-gradient() {
