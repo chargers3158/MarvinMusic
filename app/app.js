@@ -23,7 +23,7 @@ class Index extends Component {
 
 	componentWillMount() {
 		//this.props.dispatch(setApiKey('test'));
-		// this.props.dispatch(fetchUser());
+		this.props.dispatch(fetchUser());
 	}
 
 	render() {

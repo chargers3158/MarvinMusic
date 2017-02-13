@@ -38,15 +38,15 @@ class GlobalHeader extends Component {
 					<div className="user-status">
 						<div className="balance">
 							<img src={balance} className="header-icon" alt="Balance" />
-							<span className="object-count">{this.props.user.balance}</span>
+							<span className="object-count">{this.props.user.controls.balance}</span>
 						</div>
 						<div className="rockets">
 							<img src={rockets} className="header-icon" alt="Rockets" />
-							<span className="object-count">{this.props.user.rockets}</span>
+							<span className="object-count">{this.props.user.controls.rockets}</span>
 						</div>
 						<div className="bombs">
 							<img src={bombs} className="header-icon" alt="Bombs" />
-							<span className="object-count">{this.props.user.bombs}</span>
+							<span className="object-count">{this.props.user.controls.bombs}</span>
 						</div>
 					</div>
 
